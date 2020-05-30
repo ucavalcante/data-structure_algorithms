@@ -6,7 +6,18 @@ namespace linked_list_test
     public class LinkedListTest
     {
         [Fact]
-        public void AddObjectToEmptLinkedListTest()
+        public void EmptyLinkedListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            //When
+
+            //Then
+            Assert.Null(variableX.head);
+            Assert.Null(variableX.tail);
+        }
+        [Fact]
+        public void AppendOneObjectToEmptLinkedListTest()
         {
             //Given
             var variable1 = new LinkedList();
@@ -20,7 +31,7 @@ namespace linked_list_test
             Assert.Equal(variable1.head, variable1.tail);
         }
         [Fact]
-        public void AddThreeItensToLinkedListTest()
+        public void AppendThreeItensToLinkedListTest()
         {
             //Given
             var variableX = new LinkedList();
