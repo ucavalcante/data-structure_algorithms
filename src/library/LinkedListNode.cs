@@ -4,8 +4,8 @@ namespace LinkedListLibrary
 {
     public class LinkedListNode
     {
-        public Object Value { get; }
-        public LinkedListNode Next { get; }
+        public Object Value { get; set; }
+        public LinkedListNode Next { get; set; }
         public LinkedListNode(Object value, LinkedListNode next = null)
         {
             this.Value = value;

@@ -4,15 +4,20 @@ namespace LinkedListLibrary
 {
     public class LinkedList
     {
-        public Object head { get; set; }
-        public Object tail { get; set; }
-        public void add(Object value)
+        public LinkedListNode head { get; set; }
+        public LinkedListNode tail { get; set; }
+        public void Append(Object value)
         {
-            var n = new LinkedListNode(value);
-
+            var newNode = new LinkedListNode(value);
             if (head is null)
             {
-                
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                tail.Next = newNode;
+                tail = newNode;
             }
         }
     }
