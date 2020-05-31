@@ -20,15 +20,16 @@ namespace linked_list_test
         public void AppendOneObjectToEmptLinkedListTest()
         {
             //Given
-            var variable1 = new LinkedList();
-            var variable2 = 1;
+            var variableX = new LinkedList();
+            var variable1 = 1;
             //When
-            variable1.Append(variable2);
+            variableX.Append(variable1);
             //Then
-            Assert.Equal(variable2, variable1.head.Value);
-            Assert.Null(variable1.head.Next);
-            Assert.Null(variable1.tail.Next);
-            Assert.Equal(variable1.head, variable1.tail);
+            Assert.Equal(variable1, variableX.head.Value);
+            Assert.Equal(variable1, variableX.tail.Value);
+            Assert.Null(variableX.head.Next);
+            Assert.Null(variableX.tail.Next);
+            Assert.Equal(variableX.head, variableX.tail);
         }
         [Fact]
         public void AppendThreeItensToLinkedListTest()
@@ -49,6 +50,20 @@ namespace linked_list_test
             Assert.NotEqual(variableX.head, variableX.tail);
             Assert.Equal(variable2, variableX.head.Next.Value);
             Assert.Equal(variable3, variableX.head.Next.Next.Value);
+        }
+        [Fact]
+        public void PrependAddFirstObjectTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            //When
+            variableX.Prepend(variable1);
+            //Then
+            Assert.Equal(variable1, variableX.head.Value);
+            Assert.Equal(variable1, variableX.tail.Value);
+            Assert.Null(variableX.head.Next);
+            Assert.Null(variableX.tail.Next);
         }
     }
 }

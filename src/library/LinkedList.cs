@@ -20,5 +20,15 @@ namespace LinkedListLibrary
                 tail = newNode;
             }
         }
+        public void Prepend(Object value)
+        {
+            var newNode = new LinkedListNode(value);
+            newNode.Next = head;
+            head = newNode;
+            if (tail is null)
+            {
+                tail = newNode;
+            }
+        }
     }
 }
