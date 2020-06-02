@@ -6,10 +6,9 @@ namespace LinkedListLibrary
     {
         public Object Value { get; set; }
         public LinkedListNode Next { get; set; }
-        public LinkedListNode(Object value, LinkedListNode next = null)
+        public LinkedListNode(Object value)
         {
             this.Value = value;
-            this.Next = next;
         }
     }
 }
