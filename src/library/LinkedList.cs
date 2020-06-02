@@ -30,5 +30,21 @@ namespace LinkedListLibrary
                 tail = newNode;
             }
         }
+        public bool Contains(Object value)
+        {
+            var n = head;
+            while (n != null && n.Value != value)
+            {
+                n = n.Next;
+            }
+            if (n is null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

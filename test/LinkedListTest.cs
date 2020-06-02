@@ -65,5 +65,21 @@ namespace linked_list_test
             Assert.Null(variableX.head.Next);
             Assert.Null(variableX.tail.Next);
         }
+        [Fact]
+        public void ContainsValueTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            var variable2 = 2;
+            var variable3 = 3;
+            //When
+            variableX.Append(variable1);
+            variableX.Append(variable2);
+            variableX.Append(variable3);
+            //Then
+            Assert.True(variableX.Contains(2));
+            Assert.False(variableX.Contains(4));
+        }
     }
 }
