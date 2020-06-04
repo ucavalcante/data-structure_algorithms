@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace LinkedListLibrary
 {
     public class LinkedList<T>
@@ -35,7 +32,7 @@ namespace LinkedListLibrary
         {
             var n = head;
 
-            while (n != null && !EqualityComparer<T>.Default.Equals(n.Value, value) )
+            while (n != null && !Equals(n.Value, value) )
             {
                 n = n.Next;
             }

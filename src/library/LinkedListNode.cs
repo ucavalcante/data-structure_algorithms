@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LinkedListLibrary
+﻿namespace LinkedListLibrary
 {
     public class LinkedListNode<T>
     {

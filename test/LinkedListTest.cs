@@ -78,7 +78,9 @@ namespace linked_list_test
             variableX.Append(variable2);
             variableX.Append(variable3);
             //Then
+            Assert.True(variableX.Contains(1));
             Assert.True(variableX.Contains(2));
+            Assert.True(variableX.Contains(3));
             Assert.False(variableX.Contains(4));
         }
     }
