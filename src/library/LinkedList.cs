@@ -1,14 +1,15 @@
 using System;
+using System.Collections.Generic;
 
 namespace LinkedListLibrary
 {
-    public class LinkedList
+    public class LinkedList<T>
     {
-        public LinkedListNode head { get; set; }
-        public LinkedListNode tail { get; set; }
-        public void Append(Object value)
+        public LinkedListNode<T> head { get; set; }
+        public LinkedListNode<T> tail { get; set; }
+        public void Append(T value)
         {
-            var newNode = new LinkedListNode(value);
+            var newNode = new LinkedListNode<T>(value);
             if (head is null)
             {
                 head = newNode;
@@ -20,9 +21,9 @@ namespace LinkedListLibrary
                 tail = newNode;
             }
         }
-        public void Prepend(Object value)
+        public void Prepend(T value)
         {
-            var newNode = new LinkedListNode(value);
+            var newNode = new LinkedListNode<T>(value);
             newNode.Next = head;
             head = newNode;
             if (tail is null)
@@ -30,10 +31,11 @@ namespace LinkedListLibrary
                 tail = newNode;
             }
         }
-        public bool Contains(Object value)
+        public bool Contains(T value)
         {
             var n = head;
-            while (n != null && n.Value != value)
+
+            while (n != null && !EqualityComparer<T>.Default.Equals(n.Value, value) )
             {
                 n = n.Next;
             }
