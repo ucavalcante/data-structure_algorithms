@@ -1,3 +1,4 @@
+using System;
 using LinkedListLibrary;
 using Xunit;
 
@@ -82,6 +83,48 @@ namespace linked_list_test
             Assert.True(variableX.Contains(2));
             Assert.True(variableX.Contains(3));
             Assert.False(variableX.Contains(4));
+        }
+        [Fact]
+        public void DeleteItemFromEmptListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            //When
+            //Then
+            Assert.Throws<NullReferenceException>(() =>
+                variableX.Delete(variable1)
+            );
+            Assert.Null(variableX.head);
+            Assert.Null(variableX.tail);
+        }
+        [Fact]
+        public void DeleteItemFromOneItemListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            variableX.Append(variable1);
+            //When
+            variableX.Delete(variable1);
+            //Then
+            Assert.False(variableX.Contains(variable1));
+        }
+        [Fact]
+        public void DeleteItemFromMultipleItensListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            var variable2 = 2;
+            var variable3 = 3;
+            variableX.Append(variable1);
+            variableX.Append(variable2);
+            variableX.Append(variable3);
+            //When
+            variableX.Delete(variable2);
+            //Then
+            Assert.False(variableX.Contains(variable2));
         }
     }
 }
