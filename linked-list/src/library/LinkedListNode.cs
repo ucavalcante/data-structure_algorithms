@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace LinkedListLibrary
+﻿namespace LinkedListLibrary
 {
-    public class LinkedListNode
+    public class LinkedListNode<T>
     {
-        public Object Value { get; set; }
-        public LinkedListNode Next { get; set; }
-        public LinkedListNode(Object value)
+        public T Value { get; set; }
+        public LinkedListNode<T> Next { get; set; }
+        public LinkedListNode(T value)
         {
             this.Value = value;
         }
