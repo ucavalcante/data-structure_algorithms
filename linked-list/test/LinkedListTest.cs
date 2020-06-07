@@ -10,7 +10,7 @@ namespace linked_list_test
         public void EmptyLinkedListTest()
         {
             //Given
-            var variableX = new LinkedList<object>();
+            var variableX = new LinkedList();
             //When
 
             //Then
@@ -21,7 +21,7 @@ namespace linked_list_test
         public void AppendOneObjectToEmptLinkedListTest()
         {
             //Given
-            var variableX = new LinkedList<int>();
+            var variableX = new LinkedList();
             var variable1 = 1;
             //When
             variableX.Append(variable1);
@@ -36,7 +36,7 @@ namespace linked_list_test
         public void AppendThreeItensToLinkedListTest()
         {
             //Given
-            var variableX = new LinkedList<int>();
+            var variableX = new LinkedList();
             var variable1 = 1;
             var variable2 = 2;
             var variable3 = 3;
@@ -56,7 +56,7 @@ namespace linked_list_test
         public void PrependAddFirstObjectTest()
         {
             //Given
-            var variableX = new LinkedList<int>();
+            var variableX = new LinkedList();
             var variable1 = 1;
             //When
             variableX.Prepend(variable1);
@@ -70,7 +70,7 @@ namespace linked_list_test
         public void ContainsValueTest()
         {
             //Given
-            var variableX = new LinkedList<int>();
+            var variableX = new LinkedList();
             var variable1 = 1;
             var variable2 = 2;
             var variable3 = 3;

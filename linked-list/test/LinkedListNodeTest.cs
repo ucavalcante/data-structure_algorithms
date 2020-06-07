@@ -12,7 +12,7 @@ namespace linked_list_test
             //Given
             var variable1 = 1;
             //When
-            var nodeItem = new LinkedListNode<int>(variable1);
+            var nodeItem = new LinkedListNode(variable1);
             //Then
             Assert.Equal(1, nodeItem.Value);
             Assert.Null(nodeItem.Next);
