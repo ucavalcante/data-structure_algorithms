@@ -74,6 +74,10 @@ namespace LinkedListLibrary
             var tmpNode = head;
             while (tmpNode != null && tmpNode.Next != deletedNode)
             {
+                if (deletedNode == tail)
+                {
+                    tail = tmpNode.Next;
+                }
                 tmpNode = tmpNode.Next;
             }
             tmpNode.Next = deletedNode.Next;

@@ -154,9 +154,10 @@ namespace linked_list_test
             variableX.Append(variable2);
             variableX.Append(variable3);
             //When
-            variableX.Delete(variable2);
+            variableX.Delete(variable3);
             //Then
             Assert.False(variableX.Contains(variable3));
+            Assert.Equal(variableX.tail.Value, variable2);
         }
     }
 }
