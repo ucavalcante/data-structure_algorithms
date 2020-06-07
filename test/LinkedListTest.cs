@@ -111,6 +111,22 @@ namespace linked_list_test
             Assert.False(variableX.Contains(variable1));
         }
         [Fact]
+        public void DeleteFirsItemFromMultipleItensListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            var variable2 = 2;
+            var variable3 = 3;
+            variableX.Append(variable1);
+            variableX.Append(variable2);
+            variableX.Append(variable3);
+            //When
+            variableX.Delete(variable1);
+            //Then
+            Assert.False(variableX.Contains(variable1));
+        }
+        [Fact]
         public void DeleteItemFromMultipleItensListTest()
         {
             //Given
@@ -125,6 +141,22 @@ namespace linked_list_test
             variableX.Delete(variable2);
             //Then
             Assert.False(variableX.Contains(variable2));
+        }
+        [Fact]
+        public void DeleteLastItemFromMultipleItensListTest()
+        {
+            //Given
+            var variableX = new LinkedList();
+            var variable1 = 1;
+            var variable2 = 2;
+            var variable3 = 3;
+            variableX.Append(variable1);
+            variableX.Append(variable2);
+            variableX.Append(variable3);
+            //When
+            variableX.Delete(variable2);
+            //Then
+            Assert.False(variableX.Contains(variable3));
         }
     }
 }
