@@ -26,5 +26,42 @@ namespace double_linked_list
                 Tail = newNode;
             }
         }
+        public void Delete(Object value)
+        {
+            if (value is null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (Head.Value.Equals(value))
+            {
+                if (Head == Tail)
+                {
+                    Head = null;
+                    Tail = null;
+                }
+                else
+                {
+                    Head = Head.Next;
+                    Head.Previous = null;
+                }
+                return;
+            }
+            var currentNode = Head.Next;
+            while (currentNode != null && !currentNode.Value.Equals(value))
+            {
+                currentNode = currentNode.Next;
+            }
+            if (currentNode.Equals(Tail))
+            {
+                Tail = Tail.Previous;
+                Tail.Next = null;
+            }
+            else
+            {
+                currentNode.Previous.Next = currentNode.Next;
+                currentNode.Next.Previous = currentNode.Previous;
+            }
+
+        }
     }
 }
